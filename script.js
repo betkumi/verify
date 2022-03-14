@@ -54,6 +54,27 @@ const addTableRow = (hash, bust, index) => {
   }
 };
 
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+
+let hash = getUrlVars()["hash"];
+
+if(hash){
+  $('#game_hash_input').val($('#game_hash_input').val() + hash);
+}
+
+
 /**
   * @desc Calculates the game result from its hash
   * @param binary seed - Hash of the game. Ex.: Buffer.from(seed)
