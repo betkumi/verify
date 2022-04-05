@@ -72,10 +72,14 @@ let hash = getUrlVars()["hash"];
 
 if(hash){
   $('#game_hash_input').val($('#game_hash_input').val() + hash);
-  $('#game_verify_submit').click(function(){
+
+  $(document).ready(function(){
+    $('#game_verify_submit').trigger('click'); 
     console.log("verified");
   });
 }
+
+
 
 
 /**
