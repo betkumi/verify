@@ -1,3 +1,9 @@
+
+$(document).ready(function(){
+  $('#game_verify_submit').trigger('click'); 
+  console.log("verified");
+});
+
 // This will be the client seed of block 637645
 const SALT = '00000000000000000000cd2bcb44f656649c69d8b17ade0399168f3cbe859d26';
 let isVerifying = false;
@@ -73,14 +79,6 @@ let hash = getUrlVars()["hash"];
 if(hash){
   $('#game_hash_input').val($('#game_hash_input').val() + hash);
 }
-
-$(document).ready(function(){
-  $('#game_verify_submit').trigger('click'); 
-  console.log("verified");
-});
-
-
-
 
 /**
   * @desc Calculates the game result from its hash
